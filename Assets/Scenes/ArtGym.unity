@@ -486,6 +486,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 056bfd96ef72743dc8975fc3263d28c7, type: 3}
+      propertyPath: 'm_Materials.Array.data[5]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b124f04c36e2fab45aa71671dae98cb2, type: 2}
     - target: {fileID: 919132149155446097, guid: 056bfd96ef72743dc8975fc3263d28c7, type: 3}
       propertyPath: m_Name
       value: Prop_HondaPrelude
@@ -738,15 +742,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 770ed5a009bc9411c966ee9bb1e6dc2e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0004010335
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 770ed5a009bc9411c966ee9bb1e6dc2e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.003163673
+      value: -0.082
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 770ed5a009bc9411c966ee9bb1e6dc2e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.00097298686
+      value: 0.001
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 770ed5a009bc9411c966ee9bb1e6dc2e, type: 3}
       propertyPath: m_LocalRotation.w
