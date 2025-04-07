@@ -16,6 +16,7 @@ public class NutTrigger : MonoBehaviour
         if (!other.gameObject.CompareTag("CorrectNut"))
             return;
         _inRadius = true;
+        attachedTwister = other.GetComponent<NutTwister>();
     }
 
     private void OnTriggerStay(Collider other)
