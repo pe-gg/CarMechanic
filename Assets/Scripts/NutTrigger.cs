@@ -23,6 +23,7 @@ public class NutTrigger : MonoBehaviour
         if (!_inRadius || !attachedTwister.isSpinning)
             return;
         gun.Lock(true);
+        gameObject.SetActive(false);
         //anim here
     }
 
