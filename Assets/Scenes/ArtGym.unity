@@ -314,6 +314,83 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 331379493}
   m_Mesh: {fileID: -1521853642460715322, guid: 056bfd96ef72743dc8975fc3263d28c7, type: 3}
+--- !u!1001 &338083253
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d3b3d56db53b791488b802377b66e9de, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.35
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d3b3d56db53b791488b802377b66e9de, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d3b3d56db53b791488b802377b66e9de, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.699
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d3b3d56db53b791488b802377b66e9de, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d3b3d56db53b791488b802377b66e9de, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d3b3d56db53b791488b802377b66e9de, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.000000053385072
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d3b3d56db53b791488b802377b66e9de, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.00000005338508
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d3b3d56db53b791488b802377b66e9de, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d3b3d56db53b791488b802377b66e9de, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d3b3d56db53b791488b802377b66e9de, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8667886956734662618, guid: d3b3d56db53b791488b802377b66e9de, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 098ddd91086b84a488742295734b1322, type: 2}
+    - target: {fileID: -7511558181221131132, guid: d3b3d56db53b791488b802377b66e9de, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 098ddd91086b84a488742295734b1322, type: 2}
+    - target: {fileID: -7511558181221131132, guid: d3b3d56db53b791488b802377b66e9de, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 51324e900d31caf479c951c2f9d6eebe, type: 2}
+    - target: {fileID: -4520768793371387844, guid: d3b3d56db53b791488b802377b66e9de, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: aec9b870d061c084babc0de2d412311e, type: 2}
+    - target: {fileID: -4520768793371387844, guid: d3b3d56db53b791488b802377b66e9de, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 860e5021ef4d4f648a1830b3c2e58a7e, type: 2}
+    - target: {fileID: 919132149155446097, guid: d3b3d56db53b791488b802377b66e9de, type: 3}
+      propertyPath: m_Name
+      value: Prop_OilTank
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d3b3d56db53b791488b802377b66e9de, type: 3}
 --- !u!1 &392644233
 GameObject:
   m_ObjectHideFlags: 0
@@ -1513,3 +1590,4 @@ SceneRoots:
   - {fileID: 1841287858}
   - {fileID: 392644234}
   - {fileID: 1501145535}
+  - {fileID: 338083253}
