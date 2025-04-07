@@ -1135,6 +1135,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 932e6aed7b9794946a6597f6090b7287, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a4169c8ed0e0d146870d6b9b2723735, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 932e6aed7b9794946a6597f6090b7287, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f3bfc7e9644148d4cb05543ce187cb9d, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 932e6aed7b9794946a6597f6090b7287, type: 3}
+      propertyPath: 'm_Materials.Array.data[3]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 263c50e2a2fe2e541a00af8de24032a0, type: 2}
     - target: {fileID: 919132149155446097, guid: 932e6aed7b9794946a6597f6090b7287, type: 3}
       propertyPath: m_Name
       value: Prop_WorkBench
