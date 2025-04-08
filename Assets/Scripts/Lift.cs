@@ -30,17 +30,19 @@ public class Lift : MonoBehaviour
         {
             _currentLowestPoint = minimumHeight;
         }
+
         if (_raiseLift)
         {
             _lowerLift = false;
             RaiseLift();
         }
-        if(_lowerLift)
+
+        if (_lowerLift)
         {
             _raiseLift = false;
             LowerLift();
         }
-        
+
         if (hoistArms[0].position.y >= armLockHeight)
         {
             LockArms(true);
@@ -54,18 +56,22 @@ public class Lift : MonoBehaviour
     public void RaiseLift()
     {
         CheckLock();
-        foreach(var arm in hoistArms)
+        foreach (var arm in hoistArms)
         {
-            var newPosition = new Vector3(arm.position.x, Mathf.Clamp(arm.position.y + (liftSpeed * Time.fixedDeltaTime), _currentLowestPoint, maximumHeight), arm.position.z);
+            var newPosition = new Vector3(arm.position.x,
+                Mathf.Clamp(arm.position.y + (liftSpeed * Time.fixedDeltaTime), _currentLowestPoint, maximumHeight),
+                arm.position.z);
             arm.position = newPosition;
         }
     }
 
     public void LowerLift()
     {
-        foreach(var arm in hoistArms)
+        foreach (var arm in hoistArms)
         {
-            var newPosition = new Vector3(arm.position.x, Mathf.Clamp(arm.position.y - (lowerSpeed * Time.fixedDeltaTime), _currentLowestPoint, maximumHeight), arm.position.z);
+            var newPosition = new Vector3(arm.position.x,
+                Mathf.Clamp(arm.position.y - (lowerSpeed * Time.fixedDeltaTime), _currentLowestPoint, maximumHeight),
+                arm.position.z);
             arm.position = newPosition;
         }
     }
@@ -81,6 +87,11 @@ public class Lift : MonoBehaviour
     public void ToggleRaise(bool state)
     {
         _raiseLift = state;
+    }
+
+    public void ToggleLower(bool state)
+    {
+        _lowerLift = state;
     }
 
     public void ReleaseLock(bool state)
