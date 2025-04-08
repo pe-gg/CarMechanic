@@ -1112,12 +1112,21 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5957456980706825238, guid: 056bfd96ef72743dc8975fc3263d28c7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1133716693}
+    - targetCorrespondingSourceObject: {fileID: 5957456980706825238, guid: 056bfd96ef72743dc8975fc3263d28c7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1133716697}
     - targetCorrespondingSourceObject: {fileID: -3822485222490500756, guid: 056bfd96ef72743dc8975fc3263d28c7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1179126835}
+    - targetCorrespondingSourceObject: {fileID: -3822485222490500756, guid: 056bfd96ef72743dc8975fc3263d28c7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1179126839}
     - targetCorrespondingSourceObject: {fileID: -1195915440221595553, guid: 056bfd96ef72743dc8975fc3263d28c7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1606717041}
+    - targetCorrespondingSourceObject: {fileID: -1195915440221595553, guid: 056bfd96ef72743dc8975fc3263d28c7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1606717045}
   m_SourcePrefab: {fileID: 100100000, guid: 056bfd96ef72743dc8975fc3263d28c7, type: 3}
 --- !u!1 &928729308
 GameObject:
@@ -1191,6 +1200,18 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.0003
   m_Center: {x: 7.9696735e-12, y: 2.5007507e-10, z: -0.000013911693}
+--- !u!114 &1133716697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133716689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d44cacca75f6d244bbb10d96969a971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1179126831 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3822485222490500756, guid: 056bfd96ef72743dc8975fc3263d28c7, type: 3}
@@ -1217,6 +1238,18 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.0003
   m_Center: {x: 7.9696735e-12, y: 2.5007507e-10, z: -0.000013911693}
+--- !u!114 &1179126839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179126831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d44cacca75f6d244bbb10d96969a971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1382426804
 GameObject:
   m_ObjectHideFlags: 0
@@ -1508,6 +1541,18 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.0003
   m_Center: {x: 7.9696735e-12, y: 2.5007507e-10, z: -0.000013911693}
+--- !u!114 &1606717045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606717037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d44cacca75f6d244bbb10d96969a971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1617733209 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 932e6aed7b9794946a6597f6090b7287, type: 3}
@@ -1924,6 +1969,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 1618372712}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 16024b83237fa4042a52e2d306172af3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 16024b83237fa4042a52e2d306172af3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 16024b83237fa4042a52e2d306172af3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 16024b83237fa4042a52e2d306172af3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -2033,8 +2090,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0014187598, y: 0.0005199208, z: 0.0016260786}
-  m_Center: {x: -0.000067853405, y: -0.00000000202753, z: -0.0005448847}
+  m_Size: {x: 0.1, y: 0.04, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &1841287865
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2054,7 +2111,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.0003
+  m_Radius: 0.02
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1841287868
 MonoBehaviour:
@@ -2085,10 +2142,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1618372713}
+        m_TargetAssemblyTypeName: ImpactGunActivator, Assembly-CSharp
+        m_MethodName: SetAttachedSocket
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1618372713}
+        m_TargetAssemblyTypeName: ImpactGunActivator, Assembly-CSharp
+        m_MethodName: RemoveAttachedSocket
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_ShowInteractableHoverMeshes: 1
@@ -2361,7 +2442,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0.7071068, z: 0, w: 0}
   m_LocalPosition: {x: 3.688, y: 1.48, z: -0.1691}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 101791000}
@@ -2535,8 +2616,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.00035609523, y: 0.0002954776, z: 0.00029977044}
-  m_Center: {x: 0.00003295966, y: -1.5134154e-11, z: 0}
+  m_Size: {x: 0.0365176, y: 0.03, z: 0.03}
+  m_Center: {x: 0.0032412023, y: 9.450883e-18, z: 0}
 --- !u!114 &1879872248
 MonoBehaviour:
   m_ObjectHideFlags: 0

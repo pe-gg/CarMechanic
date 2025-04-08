@@ -6,13 +6,23 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class ImpactGunSocket : XRSocketInteractor
 {
+
+    /*
+    protected override void OnHoverEntering(HoverEnterEventArgs args)
+    {
+        
+    }
+
+    protected override void OnHoverEntered(HoverEnterEventArgs args)
+    {
+        
+    }
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
-        base.OnSelectEntered(args);
-        //temp
+        //base.OnSelectEntered(args);
     }
-    /*
-     *  private bool bodySocketable;
+    
+    private bool bodySocketable;
     private bool currentlySocketable;
 
     void FixedUpdate()
@@ -41,5 +51,6 @@ public class ImpactGunSocket : XRSocketInteractor
         }
         base.OnSelectExited(args);
     }
-     */
+    */
+    
 }
