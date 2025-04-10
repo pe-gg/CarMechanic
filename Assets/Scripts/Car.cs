@@ -1,5 +1,7 @@
 using System;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Car : MonoBehaviour
 {
@@ -15,14 +17,104 @@ public class Car : MonoBehaviour
     [SerializeField] private Transform visualRL;
     [SerializeField] private Transform visualRR;
 
+    [SerializeField] private float inAirThreshold;
+    [SerializeField] private JackPoint[] jackPoints;
+    [SerializeField] private WheelHub[] wheelHubs;
+    [SerializeField] private Wheel[] wheels;
+
+    private LayerMask _floorLayer;
+    public bool Destroyed { get; private set; }
+
+    [SerializeField] private TaskData jackPadsInPlaceData;
+    [SerializeField] private TaskData carInAirData;
+    [SerializeField] private TaskData allNutsRemovedData;
+    [SerializeField] private TaskData allWheelsRemovedData;
+
     private void Start()
     {
         GetComponent<Rigidbody>().centerOfMass = centerOfGravity;
+
+        Destroyed = false;
+        
+        _floorLayer = LayerMask.NameToLayer("Floor");
     }
 
     private void Update()
     {
         AdjustWheelVisuals();
+
+        CheckTaskStates();
+    }
+
+    private void CheckTaskStates()
+    {
+        if(Destroyed) return;
+        
+        if (!carInAirData.completed)
+        {
+            CheckInAir();
+        }
+
+        if (!jackPadsInPlaceData.completed)
+        {
+            CheckJackPads();
+        }
+
+        if (!allNutsRemovedData.completed)
+        {
+            CheckNutsRemoved();
+        }
+
+        if (!allWheelsRemovedData.completed)
+        {
+            CheckAllWheelsRemoved();
+        }
+    }
+
+    private void CheckInAir()
+    {
+        if (!(transform.position.y >= inAirThreshold))
+        {
+            carInAirData.completed = false;
+            return;
+        }
+        carInAirData.completed = true;
+        carInAirData.onCompleted?.Invoke();
+    }
+
+    private void CheckJackPads()
+    {
+        if (!jackPoints.All(point => point.TouchingJackPad))
+        {
+            jackPadsInPlaceData.completed = false;
+            return;
+        }
+        jackPadsInPlaceData.completed = true;
+        jackPadsInPlaceData.onCompleted?.Invoke();
+    }
+
+    private void CheckNutsRemoved()
+    {
+        if (!wheelHubs.All(hub => hub.NutsData.completed))
+        {
+            allNutsRemovedData.completed = false;
+            return;
+        }
+
+        allNutsRemovedData.completed = true;
+        allNutsRemovedData.onCompleted?.Invoke();
+    }
+
+    private void CheckAllWheelsRemoved()
+    {
+        if (!wheels.All(wheel => wheel.WheelAttachedData.completed))
+        {
+            allWheelsRemovedData.completed = false;
+            return;
+        }
+
+        allWheelsRemovedData.completed = true;
+        allWheelsRemovedData?.onCompleted.Invoke();
     }
 
     private void OnDrawGizmos()
@@ -41,9 +133,12 @@ public class Car : MonoBehaviour
         visualFR.position = frPos;
         visualRL.position = rlPos;
         visualRR.position = rrPos;
-        //visualFL.rotation = flRot;
-        ////visualFR.rotation = frRot;
-        //visualRL.rotation = rlRot;
-        //visualRR.rotation = rrRot;
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.layer != _floorLayer) return;
+        Destroyed = true;
+        Debug.Log("Why have you dropped me...");
     }
 }
