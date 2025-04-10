@@ -8,8 +8,8 @@ public class NutTrigger : MonoBehaviour
 
     private MeshRenderer _renderer;
     private SphereCollider _collider;
-    
-    public bool Attached { get; private set; }
+
+    public bool Attached { get; private set; } = true;
     
     private void Awake()
     {
@@ -41,7 +41,6 @@ public class NutTrigger : MonoBehaviour
             ToggleNuts(false);
         }
         gun.Lock(true);
-        gameObject.SetActive(false);
         //anim here
     }
 
