@@ -75,9 +75,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
-  m_Colliders: []
+  m_Colliders:
+  - {fileID: 5337943003800630175}
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 3
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -354,8 +355,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.1, y: 0.04, z: 0.1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.12876827, y: 0.07137238, z: 0.20250003}
+  m_Center: {x: 0.014384128, y: -0.00018869952, z: -0.051248286}
 --- !u!1 &7000379872167260770 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2576025581619550266, guid: 16024b83237fa4042a52e2d306172af3, type: 3}
