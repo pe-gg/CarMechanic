@@ -235,7 +235,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -5321,7 +5321,7 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders: []
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 2
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -5445,7 +5445,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0002, y: 0.00010641216, z: 0.0002}
+  m_Size: {x: 0.0004, y: 0.00010641216, z: 0.0004}
   m_Center: {x: -8.821811e-19, y: 0.000040728646, z: -6.9633574e-19}
 --- !u!114 &1947482085
 MonoBehaviour:
