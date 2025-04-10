@@ -19,7 +19,7 @@ public class HubSocket : XRSocketInteractor
         var wheel = args.interactableObject.transform.GetComponent<Wheel>();
         if(!wheel) return;
         _localHub.AttachWheel(wheel);
-        wheel.AttachWheel(true);
+        wheel.CheckWheelAttached(false);
     }
 
     protected override void OnSelectExited(SelectExitEventArgs args)
@@ -28,6 +28,6 @@ public class HubSocket : XRSocketInteractor
         var wheel = args.interactableObject.transform.GetComponent<Wheel>();
         if(!wheel) return;
         _localHub.AttachWheel(null);
-        wheel.AttachWheel(false);
+        wheel.CheckWheelAttached(true);
     }
 }

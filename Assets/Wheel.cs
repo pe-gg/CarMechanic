@@ -4,7 +4,7 @@ using UnityEngine.XR.Interaction.Toolkit.Interactables;
 
 public class Wheel : MonoBehaviour
 {
-    [field: SerializeField] public TaskData WheelAttachedData { get; private set; }
+    [field: SerializeField] public TaskData WheelRemovedData { get; private set; }
 
     private XRGrabInteractable _grabInteractable;
 
@@ -16,9 +16,9 @@ public class Wheel : MonoBehaviour
         _grabInteractable = GetComponent<XRGrabInteractable>();
     }
 
-    public void AttachWheel(bool state)
+    public void CheckWheelAttached(bool state)
     {
-        WheelAttachedData.completed = state;
+        WheelRemovedData.completed = state;
     }
 
     public void SetLockedState(bool state)

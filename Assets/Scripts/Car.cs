@@ -107,7 +107,7 @@ public class Car : MonoBehaviour
 
     private void CheckAllWheelsRemoved()
     {
-        if (!wheels.All(wheel => wheel.WheelAttachedData.completed))
+        if (!wheels.All(wheel => wheel.WheelRemovedData.completed))
         {
             allWheelsRemovedData.completed = false;
             return;
