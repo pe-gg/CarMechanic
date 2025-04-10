@@ -18,18 +18,18 @@ public class WheelHub : MonoBehaviour
 
     private void CheckNutsRemoved()
     {
-        if (assignedNuts.All(nut => nut.Attached))
-        {
-            NutsData.completed = false;
-            if(_attachedWheel)
-                _attachedWheel.SetLockedState(true);
-        }
-        else
+        if (assignedNuts.All(nut => !nut.Attached))
         {
             NutsData.completed = true;
             NutsData.onCompleted?.Invoke();
             if(_attachedWheel)
                 _attachedWheel.SetLockedState(false);
+        }
+        else
+        {
+            NutsData.completed = false;
+            if(_attachedWheel)
+                _attachedWheel.SetLockedState(true);
         }
     }
 
