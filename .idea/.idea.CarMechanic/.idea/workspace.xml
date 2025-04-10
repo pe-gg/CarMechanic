@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="efb416ce-291a-4b36-8dc0-055e9d166f76" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CarMechanic/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CarMechanic/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Prop_LiftController.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Prop_LiftController.fbx.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/OwenTestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/OwenTestScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Lift.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Lift.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,6 +94,7 @@
       <updated>1744134999665</updated>
       <workItem from="1744135001213" duration="1238000" />
       <workItem from="1744151458080" duration="285000" />
+      <workItem from="1744240667093" duration="3327000" />
     </task>
     <servers />
   </component>

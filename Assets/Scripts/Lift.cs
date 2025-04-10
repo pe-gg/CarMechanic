@@ -14,10 +14,14 @@ public class Lift : MonoBehaviour
     [SerializeField] private float minimumHeight;
     [SerializeField] private float armLockHeight;
     private float _currentLowestPoint;
+    private int _currentLowestIndex;
 
     [SerializeField] bool _raiseLift;
     [SerializeField] bool _lowerLift;
     [SerializeField] bool _releaseLock;
+
+    [SerializeField] private AudioSource liftSource;
+    [SerializeField] private AudioSource lockSource;
 
     private void Start()
     {
@@ -26,11 +30,6 @@ public class Lift : MonoBehaviour
 
     public void FixedUpdate()
     {
-        if (_releaseLock)
-        {
-            _currentLowestPoint = minimumHeight;
-        }
-
         if (_raiseLift)
         {
             _lowerLift = false;
@@ -67,6 +66,7 @@ public class Lift : MonoBehaviour
 
     public void LowerLift()
     {
+        CheckLock();
         foreach (var arm in hoistArms)
         {
             var newPosition = new Vector3(arm.position.x,
@@ -87,6 +87,14 @@ public class Lift : MonoBehaviour
     public void ToggleRaise(bool state)
     {
         _raiseLift = state;
+        if (_raiseLift)
+        {
+            liftSource.Play();
+        }
+        else
+        {
+            liftSource.Stop();
+        }
     }
 
     public void ToggleLower(bool state)
@@ -101,17 +109,22 @@ public class Lift : MonoBehaviour
 
     private void CheckLock()
     {
-        if (_releaseLock) return;
-        foreach (var point in lockPoints)
+        if (_releaseLock)
+        {
+            _currentLowestIndex = 0;
+            _currentLowestPoint = minimumHeight;
+            return;
+        }
+        for (var i = 0; i < lockPoints.Length; i++)
         {
             foreach(var arm in hoistArms)
             {
-                if (arm.transform.position.y >= point.position.y)
-                {
-                    if(_currentLowestPoint == point.position.y) continue;
-                    _currentLowestPoint = point.position.y;
-                    Debug.Log("lock passed");
-                }
+                if (!(arm.transform.position.y >= lockPoints[i].position.y)) continue;
+                if(i <= _currentLowestIndex) continue;
+                lockSource.Play();
+                _currentLowestPoint = lockPoints[i].position.y;
+                _currentLowestIndex = i;
+                Debug.Log("lock passed");
             }
         }
     }
