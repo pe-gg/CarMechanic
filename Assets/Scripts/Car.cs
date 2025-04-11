@@ -141,6 +141,7 @@ public class Car : MonoBehaviour
 
     private void CheckAllWheelsAttached()
     {
+        if(!allWheelsRemovedData.completed) return;
         if (!wheelHubs.All(wheel => wheel.AttachedWheel))
         {
             allWheelsAttachedData.completed = false;
@@ -153,6 +154,7 @@ public class Car : MonoBehaviour
 
     private void CheckAllNutsAttached()
     {
+        if(!allNutsRemovedData.completed) return;
         if (!wheelHubs.All(hub => hub.NutsAttachedData.completed))
         {
             allNutsAttachedData.completed = false;
@@ -165,10 +167,7 @@ public class Car : MonoBehaviour
 
     private void CheckCarOnGround()
     {
-        if (!wheelHubs.All(hub => hub.NutsAttachedData.completed))
-        {
-            return;
-        }
+        if (!carInAirData.completed) return;
         
         if (!(transform.position.y <= inAirThreshold))
         {
@@ -181,14 +180,14 @@ public class Car : MonoBehaviour
     
     private void CheckJackPadsOutOfWay()
     {
-        if(!carOnGroundData.completed) return;
+        if(!jackPadsInPlaceData.completed) return;
         if (jackPoints.All(point => point.TouchingJackPad))
         {
-            jackPadsInPlaceData.completed = false;
+            jackPadsOutOfWayData.completed = false;
             return;
         }
-        jackPadsInPlaceData.completed = true;
-        jackPadsInPlaceData.onCompleted?.Invoke();
+        jackPadsOutOfWayData.completed = true;
+        jackPadsOutOfWayData.onCompleted?.Invoke();
     }
 
     private void OnDrawGizmos()
