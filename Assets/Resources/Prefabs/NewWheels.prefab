@@ -15525,7 +15525,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 2
 --- !u!114 &6057695171805210135
@@ -15713,6 +15713,11 @@ MonoBehaviour:
     onCompleted:
       m_PersistentCalls:
         m_Calls: []
+  <WheelAttachedData>k__BackingField:
+    completed: 0
+    onCompleted:
+      m_PersistentCalls:
+        m_Calls: []
   disabledLayers:
     m_Bits: 4
   enabledLayers:
@@ -15832,7 +15837,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 2
 --- !u!114 &508801177755116362
@@ -16016,6 +16021,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <WheelRemovedData>k__BackingField:
+    completed: 0
+    onCompleted:
+      m_PersistentCalls:
+        m_Calls: []
+  <WheelAttachedData>k__BackingField:
     completed: 0
     onCompleted:
       m_PersistentCalls:
@@ -21264,7 +21274,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 2
 --- !u!114 &7993998660280755769
@@ -21452,6 +21462,11 @@ MonoBehaviour:
     onCompleted:
       m_PersistentCalls:
         m_Calls: []
+  <WheelAttachedData>k__BackingField:
+    completed: 0
+    onCompleted:
+      m_PersistentCalls:
+        m_Calls: []
   disabledLayers:
     m_Bits: 4
   enabledLayers:
@@ -21571,7 +21586,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 2
 --- !u!114 &6052439192514879659
@@ -21755,6 +21770,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <WheelRemovedData>k__BackingField:
+    completed: 0
+    onCompleted:
+      m_PersistentCalls:
+        m_Calls: []
+  <WheelAttachedData>k__BackingField:
     completed: 0
     onCompleted:
       m_PersistentCalls:

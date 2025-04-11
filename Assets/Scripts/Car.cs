@@ -1,7 +1,5 @@
-using System;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class Car : MonoBehaviour
 {
@@ -32,6 +30,7 @@ public class Car : MonoBehaviour
     [SerializeField] private TaskData allWheelsAttachedData;
     [SerializeField] private TaskData allNutsAttachedData;
     [SerializeField] private TaskData carOnGroundData;
+    [SerializeField] private TaskData jackPadsOutOfWayData;
 
     private void Start()
     {
@@ -85,7 +84,12 @@ public class Car : MonoBehaviour
 
         if (!carOnGroundData.completed)
         {
-            
+            CheckCarOnGround();
+        }
+
+        if (!jackPadsOutOfWayData.completed)
+        {
+            CheckJackPadsOutOfWay();
         }
     }
 
@@ -168,11 +172,23 @@ public class Car : MonoBehaviour
         
         if (!(transform.position.y <= inAirThreshold))
         {
-            carInAirData.completed = false;
+            carOnGroundData.completed = false;
             return;
         }
-        carInAirData.completed = true;
-        carInAirData.onCompleted?.Invoke();
+        carOnGroundData.completed = true;
+        carOnGroundData.onCompleted?.Invoke();
+    }
+    
+    private void CheckJackPadsOutOfWay()
+    {
+        if(!carOnGroundData.completed) return;
+        if (jackPoints.All(point => point.TouchingJackPad))
+        {
+            jackPadsInPlaceData.completed = false;
+            return;
+        }
+        jackPadsInPlaceData.completed = true;
+        jackPadsInPlaceData.onCompleted?.Invoke();
     }
 
     private void OnDrawGizmos()
