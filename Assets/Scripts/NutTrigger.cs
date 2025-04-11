@@ -9,7 +9,7 @@ public class NutTrigger : MonoBehaviour
     private MeshRenderer _renderer;
     private SphereCollider _collider;
 
-    private bool _interactable;
+    private bool _interactable = true;
 
     public bool Attached { get; private set; } = true;
     
