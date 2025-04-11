@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class Task : MonoBehaviour
 {
     [SerializeField, TextArea] private string taskDescription;
-    private bool _completed;
+    [SerializeField] private bool completed;
     [SerializeField] private bool active;
 
     [SerializeField] private Color activeColor, inactiveColor, completedColor;
@@ -27,7 +27,7 @@ public class Task : MonoBehaviour
     {
         if(!active) return;
         onTaskCompleted?.Invoke();
-        _completed = true;
+        completed = true;
         UpdateTextColors();
     }
 
@@ -44,7 +44,7 @@ public class Task : MonoBehaviour
         statusText.outlineColor = activeColor;
         descriptionText.outlineColor = activeColor;
         
-        switch (_completed)
+        switch (completed)
         {
             case true:
                 statusText.text = "Done";

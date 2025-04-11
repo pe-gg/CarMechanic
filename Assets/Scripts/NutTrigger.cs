@@ -9,6 +9,8 @@ public class NutTrigger : MonoBehaviour
     private MeshRenderer _renderer;
     private SphereCollider _collider;
 
+    private bool _interactable;
+
     public bool Attached { get; private set; } = true;
     
     private void Awake()
@@ -30,15 +32,18 @@ public class NutTrigger : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         if(!other.GetComponent<NutTwister>()) return;
+        if(!_interactable) return;
         if (!_inRadius || !attachedTwister.isSpinning)
         {
-            Debug.Log("this shit aint workin");
             return;
         }
-        Debug.Log("Removing Nut");
         if (Attached)
         {
             ToggleNuts(false);
+        }
+        else
+        {
+            ToggleNuts(true);
         }
         gun.Lock(true);
         //anim here
@@ -51,18 +56,25 @@ public class NutTrigger : MonoBehaviour
         _inRadius = false;
     }
 
-    private void ToggleNuts(bool state)
+    public void ToggleNuts(bool state)
     {
         switch (state)
         {
             case true:
                 _renderer.enabled = true;
                 Attached = true;
+                _interactable = false;
                 break;
             case false:
                 _renderer.enabled = false;
                 Attached = false;
+                _interactable = false;
                 break;
         }
+    }
+
+    public void SetInteractable()
+    {
+        _interactable = true;
     }
 }
