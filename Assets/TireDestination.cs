@@ -13,17 +13,17 @@ public class TireDestination : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        var wheel = other.GetComponent<Wheel>().gameObject;
+        var wheel = other.GetComponent<Wheel>();
         if(!wheel) return;
-        _wheelsInVolume.Add(wheel);
+        _wheelsInVolume.Add(wheel.gameObject);
         CheckWheelsInVolume();
     }
 
     private void OnTriggerExit(Collider other)
     {
-        var wheel = other.GetComponent<Wheel>().gameObject;
+        var wheel = other.GetComponent<Wheel>();
         if(!wheel) return;
-        _wheelsInVolume.Remove(wheel);
+        _wheelsInVolume.Remove(wheel.gameObject);
     }
 
     private void CheckWheelsInVolume()
