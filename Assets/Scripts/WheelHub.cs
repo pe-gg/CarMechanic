@@ -41,6 +41,7 @@ public class WheelHub : MonoBehaviour
     
     private void CheckNutsAttached()
     {
+        if (!NutsRemovedData.completed) return;
         if (AssignedNuts.Any(nut => nut.Attached))
         {
             NutsAttachedData.completed = true;
