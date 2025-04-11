@@ -4,6 +4,7 @@ public class NutTrigger : MonoBehaviour
 {
     private ImpactGunActivator gun;
     private NutTwister attachedTwister;
+    private Outline _outline;
     private bool _inRadius = false;
 
     private MeshRenderer _renderer;
@@ -18,6 +19,7 @@ public class NutTrigger : MonoBehaviour
         gun = FindFirstObjectByType<ImpactGunActivator>();
         _renderer = GetComponent<MeshRenderer>();
         _collider = GetComponent<SphereCollider>();
+        _outline = GetComponent<Outline>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -27,6 +29,7 @@ public class NutTrigger : MonoBehaviour
         Debug.Log("Socket on nut");
         _inRadius = true;
         attachedTwister = other.GetComponent<NutTwister>();
+        _outline.enabled = true;
     }
 
     private void OnTriggerStay(Collider other)
@@ -54,6 +57,7 @@ public class NutTrigger : MonoBehaviour
         if(!other.GetComponent<NutTwister>()) return;
         Debug.Log("socket removed from Nut");
         _inRadius = false;
+        _outline.enabled = false;
     }
 
     public void ToggleNuts(bool state)
