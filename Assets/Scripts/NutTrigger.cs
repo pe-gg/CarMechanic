@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class NutTrigger : MonoBehaviour
 {
+    [SerializeField] private GameObject highlight;
     private ImpactGunActivator gun;
     private NutTwister attachedTwister;
     private Outline _outline;
@@ -68,6 +69,7 @@ public class NutTrigger : MonoBehaviour
         {
             case true:
                 _renderer.enabled = true;
+                highlight.SetActive(false);
                 Attached = true;
                 _interactable = false;
                 _sfx.PlaySFX(1);
