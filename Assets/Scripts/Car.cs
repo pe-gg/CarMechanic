@@ -21,6 +21,7 @@ public class Car : MonoBehaviour
     [SerializeField] private Wheel[] wheelsToRemove;
 
     private AudioManager _sfx;
+    private SceneTransition _scene;
 
     private LayerMask _floorLayer;
     public bool Destroyed { get; private set; }
@@ -37,6 +38,7 @@ public class Car : MonoBehaviour
     private void Start()
     {
         _sfx = FindFirstObjectByType<AudioManager>();
+        _scene = FindFirstObjectByType<SceneTransition>(); //forgive me for i have sinned
         GetComponent<Rigidbody>().centerOfMass = centerOfGravity;
 
         Destroyed = false;
@@ -172,7 +174,7 @@ public class Car : MonoBehaviour
     {
         if (!carInAirData.completed) return;
         
-        if (!(transform.position.y <= inAirThreshold-1))
+        if (!(transform.position.y <= inAirThreshold-0.5f))
         {
             carOnGroundData.completed = false;
             return;
@@ -217,6 +219,8 @@ public class Car : MonoBehaviour
         if (Destroyed) return;
         Destroyed = true;
         _sfx.PlaySFX(4);
+        string scene = "DecorPass";
+        _scene.FadeToScene(scene);
         Debug.Log("Why have you dropped me...");
     }
 

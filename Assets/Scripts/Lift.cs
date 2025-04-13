@@ -87,7 +87,7 @@ public class Lift : MonoBehaviour
     public void ToggleRaise(bool state)
     {
         _raiseLift = state;
-        if (_raiseLift)
+        if (_raiseLift || _lowerLift)
         {
             liftSource.Play();
         }
@@ -100,6 +100,14 @@ public class Lift : MonoBehaviour
     public void ToggleLower(bool state)
     {
         _lowerLift = state;
+        if (_lowerLift || _raiseLift)
+        {
+            liftSource.Play();
+        }
+        else
+        {
+            liftSource.Stop();
+        }
     }
 
     public void ReleaseLock(bool state)
