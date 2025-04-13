@@ -20,6 +20,8 @@ public class Car : MonoBehaviour
     [SerializeField] private WheelHub[] wheelHubs;
     [SerializeField] private Wheel[] wheelsToRemove;
 
+    private AudioManager _sfx;
+
     private LayerMask _floorLayer;
     public bool Destroyed { get; private set; }
 
@@ -34,6 +36,7 @@ public class Car : MonoBehaviour
 
     private void Start()
     {
+        _sfx = FindFirstObjectByType<AudioManager>();
         GetComponent<Rigidbody>().centerOfMass = centerOfGravity;
 
         Destroyed = false;
@@ -169,7 +172,7 @@ public class Car : MonoBehaviour
     {
         if (!carInAirData.completed) return;
         
-        if (!(transform.position.y <= inAirThreshold))
+        if (!(transform.position.y <= inAirThreshold-1))
         {
             carOnGroundData.completed = false;
             return;
@@ -211,7 +214,9 @@ public class Car : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.layer != _floorLayer) return;
+        if (Destroyed) return;
         Destroyed = true;
+        _sfx.PlaySFX(4);
         Debug.Log("Why have you dropped me...");
     }
 

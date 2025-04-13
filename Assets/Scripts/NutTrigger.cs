@@ -6,6 +6,7 @@ public class NutTrigger : MonoBehaviour
     private NutTwister attachedTwister;
     private Outline _outline;
     private bool _inRadius = false;
+    private AudioManager _sfx;
 
     private MeshRenderer _renderer;
     private SphereCollider _collider;
@@ -20,6 +21,7 @@ public class NutTrigger : MonoBehaviour
         _renderer = GetComponent<MeshRenderer>();
         _collider = GetComponent<SphereCollider>();
         _outline = GetComponent<Outline>();
+        _sfx = FindFirstObjectByType<AudioManager>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -68,11 +70,13 @@ public class NutTrigger : MonoBehaviour
                 _renderer.enabled = true;
                 Attached = true;
                 _interactable = false;
+                _sfx.PlaySFX(1);
                 break;
             case false:
                 _renderer.enabled = false;
                 Attached = false;
                 _interactable = false;
+                _sfx.PlaySFX(1);
                 break;
         }
     }
